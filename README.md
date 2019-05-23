@@ -2,10 +2,10 @@
 
 ```bash
 # clone the project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+git clone https://github.com/haibotvr/vue-admin-word.git
 
 # enter the project directory
-cd vue-element-admin
+cd vue-admin-word
 
 # install dependency
 npm install
