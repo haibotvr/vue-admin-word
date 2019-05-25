@@ -89,7 +89,7 @@
             <i class="el-icon-video-play" />
           </div>
           <div class="btn-box">
-            <el-button type="primary" round @click="nextWord()">{{ nextWordText }}</el-button>
+            <el-button type="primary" round @click="nextWord()" @keyup.esc="KeyUpEsc">{{ nextWordText }}</el-button>
           </div>
         </div>
       </el-col>
@@ -154,6 +154,13 @@ export default {
     }
   },
   created() {
+    var _this = this;
+    document.onkeydown = function(e) {
+        let key = window.event.keyCode
+        if (key == 13) {
+            _this.checkWord(_this.writeAnswer)
+        }
+    };
     this.tmId = this.$route.params.id
     this.fetchData()
   },
