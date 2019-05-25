@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-row :gutter="18">
-      <!-- <el-col :span="6" v-show="false">
+      <!-- <el-col :span="24" v-show="false">
         <div class="grid-content bg-purple">
           <div class="number"><span>{{ nowPosition + 1 }}</span>/{{ totalNum }}</div>
           <div class="picture"><img src="../../../assets/study/orange.png" /></div>
@@ -28,7 +28,7 @@
           </div>
         </div>
       </el-col> -->
-      <el-col v-show="dialogWrite" :span="6">
+      <el-col v-show="dialogWrite" :span="24">
         <div class="grid-content bg-purple">
 
           <div class="number"><span>{{ nowPosition + 1 }}</span>/{{ totalNum }}</div>
@@ -46,7 +46,7 @@
           </div>
         </div>
       </el-col>
-      <el-col v-show="dialogTip" :span="6">
+      <el-col v-show="dialogTip" :span="24">
         <div class="grid-content bg-purple">
           <div class="sound">
             <label>{{ phoneticSymbol }}</label>
@@ -59,7 +59,7 @@
           </dl>
         </div>
       </el-col>
-      <el-col v-show="dialogRight" :span="6">
+      <el-col v-show="dialogRight" :span="24">
         <div class="grid-content bg-purple">
           <div class="number"><span>{{ nowPosition + 1 }}</span>/{{ totalNum }}</div>
           <div class="picture">
@@ -76,7 +76,7 @@
           </div>
         </div>
       </el-col>
-      <el-col v-show="dialogWrong" :span="6">
+      <el-col v-show="dialogWrong" :span="24">
         <div class="grid-content bg-purple">
           <div class="number"><span>{{ nowPosition + 1 }}</span>/{{ totalNum }}</div>
           <div class="picture">
@@ -93,7 +93,7 @@
           </div>
         </div>
       </el-col>
-      <el-col v-show="dialogResult" :span="6">
+      <el-col v-show="dialogResult" :span="24">
         <div class="grid-content bg-purple">
           <h1>回答正确{{ rightNum }}个</h1>
           <h1>回答错误{{ totalNum - rightNum }}个</h1>
@@ -103,7 +103,7 @@
           </div>
         </div>
       </el-col>
-      <el-col v-show="dialogFinish" :span="6">
+      <el-col v-show="dialogFinish" :span="24">
         <div class="grid-content bg-purple">
           <h1>本书已学完</h1>
         </div>
