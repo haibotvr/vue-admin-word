@@ -53,6 +53,9 @@
             <svg-icon icon-class="sound" />
           </div>
           <dl class="select-box">
+            <dd>
+              <h1>{{ answer }}</h1>
+            </dd>
             <dd v-for="obj in wordCh" :key="obj.key">
               <h2>{{ obj.pos }}</h2><h2>{{ obj.meaning }}</h2>
             </dd>
