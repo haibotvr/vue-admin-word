@@ -142,7 +142,7 @@ export default {
         {
           pos: 'n',
           meaning: '书籍',
-          key: 1558403714493
+          key: Date.now()
         },
         {
           pos: 'vt',
