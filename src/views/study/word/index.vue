@@ -34,6 +34,13 @@
           <div class="number"><span>{{ nowPosition + 1 }}</span>/{{ totalNum }}</div>
           <!-- <div class="picture"><img src="../../../assets/study/orange.png" /></div> -->
           <div class="sound">
+            <dl class="select-box">
+              <dd v-for="obj in wordCh" :key="obj.key">
+                <h2>{{ obj.pos }}</h2><h2>{{ obj.meaning }}</h2>
+              </dd>
+            </dl>
+          </div>
+          <div class="sound">
             <label>{{ phoneticSymbol }}</label>
             <svg-icon icon-class="sound" />
           </div>
@@ -48,10 +55,10 @@
       </el-col>
       <el-col v-show="dialogTip" :span="24">
         <div class="grid-content bg-purple">
-          <div class="sound">
-            <label>{{ phoneticSymbol }}</label>
-            <svg-icon icon-class="sound" />
-          </div>
+          // <div class="sound">
+          //   <label>{{ phoneticSymbol }}</label>
+          //   <svg-icon icon-class="sound" />
+          // </div>
           <dl class="select-box">
             <dd>
               <h1>{{ answer }}</h1>
