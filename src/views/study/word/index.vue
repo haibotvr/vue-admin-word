@@ -106,9 +106,9 @@
       <el-col v-show="dialogFinish" :span="24">
         <div class="grid-content bg-purple">
           <h1>本书已学完</h1>
-        </div>
-        <div class="btn-box">
-          <el-button type="primary" round @click="reStudy()">重新学习</el-button>
+          <div class="btn-box">
+            <el-button type="primary" round @click="reStudy()">重新学习</el-button>
+          </div>
         </div>
       </el-col>
     </el-row>
