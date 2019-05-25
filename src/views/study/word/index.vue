@@ -34,11 +34,7 @@
           <div class="number"><span>{{ nowPosition + 1 }}</span>/{{ totalNum }}</div>
           <!-- <div class="picture"><img src="../../../assets/study/orange.png" /></div> -->
           <div class="sound">
-            <dl class="select-box">
-              <dd v-for="obj in wordCh" :key="obj.key">
-                <h2>{{ obj.pos }}</h2><h2>{{ obj.meaning }}</h2>
-              </dd>
-            </dl>
+            <h2 v-for="obj in wordCh" :key="obj.key" align="center">{{ obj.pos }}.  {{ obj.meaning }}</h2>
           </div>
           <div class="sound">
             <label>{{ phoneticSymbol }}</label>
@@ -55,14 +51,8 @@
       </el-col>
       <el-col v-show="dialogTip" :span="24">
         <div class="grid-content bg-purple">
-          <dl class="select-box">
-            <dd>
-              <h1>{{ answer }}</h1>
-            </dd>
-            <dd v-for="obj in wordCh" :key="obj.key">
-              <h2>{{ obj.pos }}</h2><h2>{{ obj.meaning }}</h2>
-            </dd>
-          </dl>
+          <h1 align="center">{{ answer }}</h1>
+          <h2 v-for="obj in wordCh" :key="obj.key" align="center">{{ obj.pos }}.  {{ obj.meaning }}</h2>
         </div>
       </el-col>
       <el-col v-show="dialogRight" :span="24">
@@ -101,9 +91,9 @@
       </el-col>
       <el-col v-show="dialogResult" :span="24">
         <div class="grid-content bg-purple">
-          <h1>回答正确{{ rightNum }}个</h1>
-          <h1>回答错误{{ totalNum - rightNum }}个</h1>
-          <h1>正确率{{ correctness }}%</h1>
+          <h1 align="center">回答正确{{ rightNum }}个</h1>
+          <h1 align="center">回答错误{{ totalNum - rightNum }}个</h1>
+          <h1 align="center">正确率{{ correctness }}%</h1>
           <div class="btn-box">
             <el-button type="primary" round @click="nextStudy()">继续学习</el-button>
           </div>
@@ -111,7 +101,7 @@
       </el-col>
       <el-col v-show="dialogFinish" :span="24">
         <div class="grid-content bg-purple">
-          <h1>本书已学完</h1>
+          <h1 align="center">本书已学完</h1>
           <div class="btn-box">
             <el-button type="primary" round @click="reStudy()">重新学习</el-button>
           </div>
@@ -162,8 +152,8 @@ export default {
   created() {
     var _this = this
     document.onkeydown = function(e) {
-      let key = window.event.keyCode
-      if (key == 13) {
+      const key = window.event.keyCode
+      if (key === 13) {
         _this.checkWord(_this.writeAnswer)
       }
     }
