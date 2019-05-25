@@ -55,10 +55,6 @@
       </el-col>
       <el-col v-show="dialogTip" :span="24">
         <div class="grid-content bg-purple">
-          // <div class="sound">
-          //   <label>{{ phoneticSymbol }}</label>
-          //   <svg-icon icon-class="sound" />
-          // </div>
           <dl class="select-box">
             <dd>
               <h1>{{ answer }}</h1>
@@ -164,13 +160,13 @@ export default {
     }
   },
   created() {
-    var _this = this;
+    var _this = this
     document.onkeydown = function(e) {
-        let key = window.event.keyCode
-        if (key == 13) {
-            _this.checkWord(_this.writeAnswer)
-        }
-    };
+      let key = window.event.keyCode
+      if (key == 13) {
+        _this.checkWord(_this.writeAnswer)
+      }
+    }
     this.tmId = this.$route.params.id
     this.fetchData()
   },
