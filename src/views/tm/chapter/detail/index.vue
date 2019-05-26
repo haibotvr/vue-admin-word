@@ -33,7 +33,7 @@
           {{ scope.$index + 1 }}
         </template>
       </el-table-column>
-      <el-table-column label="单词" width="200" align="center">
+      <el-table-column label="单词" align="center">
         <template slot-scope="scope">
           {{ scope.row.wordEn }}
         </template>
@@ -60,7 +60,7 @@
           <span>{{ scope.row.updateTime }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" align="center" width="200" class-name="small-padding fixed-width">
+      <el-table-column label="操作" align="center" width="250" class-name="small-padding fixed-width">
         <template slot-scope="{row}">
           <el-button v-if="row.ewStatus!=0" size="mini" type="primary" @click="handleUpdate(row)">
             编辑

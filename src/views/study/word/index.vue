@@ -5,7 +5,7 @@
         <div class="grid-content bg-purple">
           <div class="number"><span>{{ nowPosition + 1 }}</span>/{{ totalNum }}</div>
           <div class="picture"><img src="../../../assets/study/orange.png" /></div>
-          <div class="sound">
+          <div class="sound" @click="playSound()">
             <label>{{ phoneticSymbol }}</label>
             <svg-icon icon-class="sound" />
           </div>
@@ -38,7 +38,8 @@
           </div>
           <div class="sound">
             <label>{{ phoneticSymbol }}</label>
-            <svg-icon icon-class="sound" />
+            <svg-icon icon-class="sound" @click="playSound()" />
+            <audio id="audioElement" :src="action" @canplay="prePlay()" />
           </div>
           <div class="write-answer">
             <el-input v-model="writeAnswer" placeholder="请在此处填写单词答案" suffix-icon="el-icon-edit" prop="writeAnswer" clearable />
@@ -117,6 +118,9 @@ import { selectWords, addStudyLog, reStudy } from '@/api/study'
 export default {
   data() {
     return {
+      oriAction: 'http://dict.youdao.com/dictvoice?audio=',
+      action: '',
+      audio: '',
       tmId: undefined,
       chapterId: undefined,
       correctness: '',
@@ -212,6 +216,13 @@ export default {
         this.nextWordText = '查看学习结果'
       }
     },
+    prePlay() {
+      this.action = this.oriAction + this.answer
+      this.audio = document.getElementById('audioElement')
+    },
+    playSound() {
+      this.audio.play()
+    },
     nextWord() {
       if ((this.nowPosition + 1) === this.totalNum) {
         this.showResult()
@@ -268,6 +279,7 @@ export default {
       this.dialogResult = false
       this.dialogFinish = false
       this.writeAnswer = ''
+      this.prePlay()
     }
   }
 }
